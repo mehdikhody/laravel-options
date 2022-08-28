@@ -40,7 +40,10 @@ class OptionGetCommand extends Command
     {
         $key = $this->argument('key');
         if (Option::has($key)) {
-            $this->info(Option::get($key));
+            $value = Option::get($key);
+            if ($value === true) $value = 'true';
+            if ($value === false) $value = 'false';
+            $this->info($value);
             return 0;
         }
 

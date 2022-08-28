@@ -40,7 +40,10 @@ class OptionSetCommand extends Command
     {
         $key = $this->argument('key');
         $value = implode($this->argument('value'), ' ');
-        $value = is_numeric($value) ? (float) $value : $value;
+
+        if (is_numeric($value)) $value = (float) $value;
+        if ($value === 'true') $value = true;
+        if ($value === 'false') $value = false;
 
         Option::set($key, $value);
         return 0;

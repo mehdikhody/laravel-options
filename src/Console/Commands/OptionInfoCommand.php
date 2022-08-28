@@ -43,7 +43,7 @@ class OptionInfoCommand extends Command
             $model = Option::getModel($key);
             $this->table(
                 array_keys($model->getAttributes()),
-                [$model->getAttributes()]
+                [$model->toArray()]
             );
         } else {
             $this->warn('There is no data.');
