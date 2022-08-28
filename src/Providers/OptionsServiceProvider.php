@@ -11,6 +11,7 @@ use Mehdikhody\Options\Console\Commands\OptionRemoveCommand;
 use Mehdikhody\Options\Console\Commands\OptionInfoCommand;
 use Mehdikhody\Options\Console\Commands\OptionClearCommand;
 use Mehdikhody\Options\Console\Commands\OptionSeedCommand;
+use Mehdikhody\Options\Console\Commands\OptionAllCommand;
 
 class OptionsServiceProvider extends ServiceProvider
 {
@@ -40,7 +41,8 @@ class OptionsServiceProvider extends ServiceProvider
             OptionRemoveCommand::class,
             OptionInfoCommand::class,
             OptionClearCommand::class,
-            OptionSeedCommand::class
+            OptionSeedCommand::class,
+            OptionAllCommand::class
         ]);
     }
 }

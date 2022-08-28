@@ -4,7 +4,6 @@ namespace Mehdikhody\Options\Console\Commands;
 
 use Illuminate\Console\Command;
 use Mehdikhody\Options\Facades\Option;
-use Mehdikhody\Options\Seeders\OptionSeeder;
 
 class OptionClearCommand extends Command
 {

@@ -94,6 +94,7 @@ php artisan option:get key
 php artisan option:has key
 php artisan option:remove key
 php artisan option:info key
+php artisan option:all
 php artisan option:clear
 php artisan option:seed
 ```

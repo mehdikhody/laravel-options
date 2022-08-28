@@ -40,6 +40,8 @@ class OptionSetCommand extends Command
     {
         $key = $this->argument('key');
         $value = implode($this->argument('value'), ' ');
+        $value = is_numeric($value) ? (int) $value : $value;
+
         Option::set($key, $value);
         return 0;
     }

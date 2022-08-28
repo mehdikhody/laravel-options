@@ -3,23 +3,23 @@
 namespace Mehdikhody\Options\Console\Commands;
 
 use Illuminate\Console\Command;
-use Mehdikhody\Options\Facades\Option;
+use Mehdikhody\Options\Models\Option;
 
-class OptionGetCommand extends Command
+class OptionAllCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'option:get {key}';
+    protected $signature = 'option:all';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get the specified option value.';
+    protected $description = 'Get all options.';
 
     /**
      * Create a new command instance.
@@ -38,9 +38,10 @@ class OptionGetCommand extends Command
      */
     public function handle()
     {
-        $key = $this->argument('key');
-        if (Option::has($key)) {
-            $this->info(Option::get($key));
+        $options = Option::all();
+        if ($options->count() > 0) {
+            $header = array_keys($options[0]->getAttributes());
+            $this->table($header, $options->toArray());
             return 0;
         }
 

@@ -7,7 +7,7 @@ return [
     | Option Configuration
     |--------------------------------------------------------------------------
     |
-    | By default all options will be stored in option table,
+    | By default all options will be stored in the `options` table,
     | you can change the name of this table simply by changing
     | the `table` property bellow of this comment.
     |

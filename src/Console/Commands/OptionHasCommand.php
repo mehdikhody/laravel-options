@@ -38,12 +38,12 @@ class OptionHasCommand extends Command
      */
     public function handle()
     {
-        if (!Option::has($this->argument('key'))) {
-            $this->info('defined');
+        if (Option::has($this->argument('key'))) {
+            $this->info('option exists.');
             return 0;
         }
 
-        $this->warn('undefined');
+        $this->warn('There is no data.');
         return 0;
     }
 }

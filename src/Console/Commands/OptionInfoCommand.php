@@ -46,7 +46,7 @@ class OptionInfoCommand extends Command
                 [$model->getAttributes()]
             );
         } else {
-            $this->warn('undefined');
+            $this->warn('There is no data.');
         }
 
         return 0;
