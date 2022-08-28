@@ -15,7 +15,7 @@ class OptionSeeder extends Seeder
      */
     public function run()
     {
-        $options = config('option.options');
+        $options = config('option.options', []);
         foreach ($options as $key => $value) {
             Option::set($key, $value);
         }

@@ -1,13 +1,18 @@
 {
     "name": "mehdikhody/laravel-options",
     "description": "Global key-value store for laravel.",
+    "keywords": ["laravel", "options", "settings"],
     "type": "library",
+    "license": "MIT",
     "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/mehdikhody/laravel-options/issues",
+        "source": "https://github.com/mehdikhody/laravel-options"
+    },
     "require": {
         "php": ">=7.3",
         "laravel/framework": "^8.0"
     },
-    "license": "MIT",
     "autoload": {
         "files": [
             "src/helpers.php"

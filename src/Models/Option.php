@@ -111,7 +111,7 @@ class Option extends Model
     {
         DB::table($this->table)->truncate();
 
-        $options = config('option.options');
+        $options = config('option.options', []);
         foreach ($options as $key => $value) {
             $this->set($key, $value);
         }
