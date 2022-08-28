@@ -46,7 +46,7 @@ class OptionInfoCommand extends Command
                 [$model->getAttributes()]
             );
         } else {
-            $this->info($key . ' is undefined.');
+            $this->warn('undefined');
         }
 
         return 0;

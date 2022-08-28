@@ -39,10 +39,12 @@ class OptionGetCommand extends Command
     public function handle()
     {
         $key = $this->argument('key');
-        $value = Option::get($key, 'undefined');
+        if (!Option::has($key)) {
+            $this->info(Option::get($key));
+            return 0;
+        }
 
-        $this->info($key . ' is ' . $value . '.');
-
+        $this->warn('undefined');
         return 0;
     }
 }

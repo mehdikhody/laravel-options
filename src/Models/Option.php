@@ -3,8 +3,16 @@
 namespace Mehdikhody\Options\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * @property integer $id
+ * @property string $key
+ * @property mixed $value
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ */
 class Option extends Model
 {
     /**

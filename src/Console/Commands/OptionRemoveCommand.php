@@ -40,9 +40,6 @@ class OptionRemoveCommand extends Command
     {
         $key = $this->argument('key');
         Option::remove($key);
-
-        $this->info($key . ' has been deleted.');
-
         return 0;
     }
 }

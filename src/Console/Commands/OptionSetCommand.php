@@ -40,10 +40,7 @@ class OptionSetCommand extends Command
     {
         $key = $this->argument('key');
         $value = implode($this->argument('value'), ' ');
-
         Option::set($key, $value);
-        $this->info($key . ' set to ' . $value . '.');
-
         return 0;
     }
 }

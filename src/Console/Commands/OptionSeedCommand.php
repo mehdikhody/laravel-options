@@ -38,10 +38,7 @@ class OptionSeedCommand extends Command
      */
     public function handle()
     {
-        $this->call('db:seed', [
-            '--class' => OptionSeeder::class
-        ]);
-
+        $this->call('db:seed', ['--class' => OptionSeeder::class]);
         return 0;
     }
 }
