@@ -51,7 +51,7 @@ if (!function_exists('option_remove')) {
      * @param string $key
      * @return void
      */
-    function remove(string $key): void
+    function option_remove(string $key): void
     {
         Option::remove($key);
     }

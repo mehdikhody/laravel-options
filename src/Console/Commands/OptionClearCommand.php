@@ -40,7 +40,7 @@ class OptionClearCommand extends Command
     public function handle()
     {
         Option::clear();
-        $this->info('Options removed.');
+        $this->info('Options wiped out.');
 
         return 0;
     }

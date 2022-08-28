@@ -3,23 +3,23 @@
 namespace Mehdikhody\Options\Console\Commands;
 
 use Illuminate\Console\Command;
-use Mehdikhody\Options\Facades\Option;
+use Mehdikhody\Options\Database\Seeders\OptionSeeder;
 
-class OptionHasCommand extends Command
+class OptionSeedCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'option:has {key}';
+    protected $signature = 'option:seed';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Determine if the given option value exists.';
+    protected $description = 'Seeds the options table.';
 
     /**
      * Create a new command instance.
@@ -38,10 +38,9 @@ class OptionHasCommand extends Command
      */
     public function handle()
     {
-        $key = $this->argument('key');
-
-        if (Option::has($key)) $this->info('Option ' . $key . ' exists.');
-        else $this->info('Option ' . $key . ' don\'t exists.');
+        $this->call('db:seed', [
+            '--class' => OptionSeeder::class
+        ]);
 
         return 0;
     }
